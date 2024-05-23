@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ForYourPet | Alimento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="mystyle.css">
+  </head>
+  <body>
+
+    <!--Nav bar-->
+    <nav class="navbar bg-body-tertiary " data-bs-theme="dark" >
+        <div class="container-fluid">
+
+            <!--Logo Y Texto RMB-->
+            <a class="navbar-brand" href="index.html">
+              <div class="d-flex aling-items-center">
+                  <img src="img/logo.png" alt="." width="58px" class="mr-2">
+
+                  <h1 class="mb-0"> ForYourPet</h1>
+              </div>
+            </a>
+            <!--Logo Y Texto RMB-->
+
+            <!--Otros contenidos del navBar-->
+
+            <!--Barra de busqueda-->
+            <form class="d-flex " style="width: 650px;" role="search">
+            
+              <input class="form-control me-2" type="search" placeholder="Busca lo necesario para tu mascota" aria-label="Search">
+              <button class="btn btn-outline-light" type="submit"><img src="img/lupa.png" alt="" width="40px"></button>
+            </form>
+            <!--Barra de busqueda-->
+
+            <!--Otros contenidos del navBar-->
+
+        <!--Botónes de inicio de sesión y mercado -->
+          <!-- Contenedor para agrupar los botones -->
+          <div class="d-flex align-items-center">
+            <!--Botón de Registro/inicio Sesion-->
+            <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img src="img/user.png" width="58px" alt="">
+            </button>
+            <!--Botón de carrito-->
+            <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <div class="d-flex align-items-center">
+                    <img src="img/carrito.png" alt="." width="58px" class="me-2">
+                </div>
+            </button>
+          </div>
+          <!--Botónes de inicio de sesión y mercado -->
+  
+          <!--Modal de Registro/inicio Sesion-->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: blanchedalmond;">Inicia Sesion</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label" style="color: blanchedalmond;">Correo</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label" style="color: blanchedalmond;">Contraseña</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1" style="color: blanchedalmond;">Recordar mis datos</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+                            <div id="emailHelp" class="form-text">Aun no tienes cuenta? Registrate aqui :</div>
+                            <a href="register.html" class="btn btn-primary text-decoration-none" style="color: blanchedalmond;">Registro</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <!--Modal de Registro/inicio Sesion-->
+
+              <!--Contenido Carrito-->
+              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Productos en el carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3" id="carrito-items">
+                        <li class="nav-item">
+                            <a class="nav-link active Navb-G" id="no-productos" aria-current="page" href="#">NO HAY PRODUCTOS EN EL CARRO</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <span>Total de los productos: </span>
+                        <span id="total-productos">0$</span>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-light" type="button">Comprar</button>
+                        <button class="btn btn-secondary" type="button">Ir al carro</button>
+                        <!--Boton para limpiar el carrito-->
+                        <button class="btn btn-light" type="button" onclick="limpiarCarrito()">Limpiar Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <!--Contenido Carrito-->
+          </div>
+        </div>
+      </nav>
+    <!--Nav bar-->
+    
+    <!--Contenido Principal de la Pag-->
+    <main>
+      <!-- Segunda Navbar Enlaces d -->
+      
+      <nav class="navbar bg-dark border-bottom border-body justify-content-center" data-bs-theme="dark">
+        <div class="row"> 
+          <!-- Contenido De la segunda navbar -->
+          <ul class="nav" data-bg-theme="dark">
+            
+            <div class="col-3">
+              <li class="nav-item">
+                <a class="navbar-brand" aria-current="page" href="alimento.html">Alimento</a>
+              </li>
+            </div>
+
+            <div class="col-3"> 
+              <li class="nav-item">
+                <a class="navbar-brand" aria-current="page" href="transporte.html">Transporte </a>
+              </li>
+            </div>
+          
+            <div class="col-3">
+              <li class="nav-item">
+                <a class="navbar-brand" aria-current="page" href="accesorios.html">Accesorios </a>
+              </li>
+            </div>
+            
+            <div class="col-3">
+              <li class="nav-item">
+                <a class="navbar-brand" aria-current="page" href="nosotros.html">Nosotros</a>
+              </li>
+            </div>
+      
+          </ul>
+    
+        </div>
+      </nav>
+    </main> 
+    <!-- Segunda Navbar Enlaces d -->
+
+    <!-- Titulo del contenido principal de la pag -->
+    <p >
+      <h1 id="centertxt">
+        Alimento para tus mascotas
+      </h1>
+    </p>
+    <!-- Titulo del contenido principal de la pag -->
+
+      <!-- Card Principales de la pag -->
+  
+
+
+    <div class="row cal-4 justify-content-center">
+        <!--Producto 1-->
+        <div class="card " style="width: 18rem; margin: 20px;" >
+          <img src="img/alimento/comida_erizo.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <!--NombreProducto-->
+            <h5 class="card-title">Mazuri Alimento Erizo de Tierra 1,5 Kg</h5>
+            <!--PrecioProducto-->
+            <h4 class="card-title">$10.990</h4>
+            <!--Boton añadir al carro-->
+            <form id="formulario-producto-1">                                       <!--     id         precio         nombre     cantidad-->
+              <button type="button" class="btn btn-primary" onclick="agregarAlCarrito('producto_004', 10990, 'Comida Mazuri Erizo 1,5Kg', 1)">Añadir al carro</button>
+            </form>
+          </div>
+        </div>
+        <!--Producto 1-->
+
+
+
+
+        <!--Producto 2-->
+        <div class="card" style="width: 18rem; margin: 20px;">
+          <img src="img/alimento/comida_perro.jpg" class="card-img-top img_producto" alt="" >
+          <div class="card-body">
+              <!--NombreProducto-->
+              <h5 class="card-title">CANNES PREMIUM ADULTO CARNE Y CEREALES 18Kg</h5>
+              <!--PrecioProducto-->
+              <h4 class="card-title">$26.900</h4>
+              <!--Boton añadir al carro-->
+              <form id="formulario-producto-1">                                       <!--     id         precio         nombre     cantidad-->
+                  <button type="button" class="btn btn-primary" onclick="agregarAlCarrito('producto_002', 26900, 'Comida CANNES PREMIUM 18Kg', 1)">Añadir al carro</button>
+              </form>
+          </div>
+        </div>
+        <!--Producto 2-->
+
+
+        <!--Producto 3-->
+        <div class="card " style="width: 18rem; margin: 20px;" >
+          <img src="img/alimento/comida_gato.webp" class="card-img-top" alt="..." >
+          <div class="card-body">
+            <!--NombreProducto-->
+            <h5 class="card-title">CAT CHOW ADULTOS SABOR CARNES</h5>
+            <!--PrecioProducto-->
+            <h4 class="card-title">$27.930</h4>
+            <!--Boton añadir al carro-->
+            <form id="formulario-producto-1">                                       <!--     id         precio         nombre     cantidad-->
+              <button type="button" class="btn btn-primary" onclick="agregarAlCarrito('producto_005', 27930, 'Cat Chow Sabor carne', 1)">Añadir al carro</button>
+            </form>
+          </div>
+        </div>
+        <!--Producto 3-->
+    </div>
+
+  
+    <!--Contenido Principal de la Pag-->
+    <script src="carrito.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
